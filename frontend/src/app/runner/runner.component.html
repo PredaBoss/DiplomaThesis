@@ -1,0 +1,257 @@
+<body>
+    <div id = "road_info_div">
+        <div id="north_div">
+            <div class="form-container">
+                <form>
+                    <mat-form-field appearance="fill">
+                    <mat-label>Program of the semaphore</mat-label>
+                    <mat-select [(ngModel)]="programList" name="program" (selectionChange)="refreshSemaphore()">
+                        <mat-option *ngFor="let program of programValues" [value]="program.value">
+                        {{program.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                    </mat-form-field>
+                </form>
+            </div>
+            <div id="north_street">
+                <div id="north_exit_div">
+                    <img src="assets/front_south.png" alt="Cannot load" style="size: 30"/>
+                </div>
+                <div id="north_left_div">
+                    <img src="assets/turn_left_north.png" alt="Cannot load" style="size: 30"/>
+                    <select id="north_left_load">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div id="north_front_div">
+                    <img src="assets/front_north.png" alt="Cannot load" style="size: 30"/>
+                    <select id="north_front_load">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div id="north_right_div">
+                    <img src="assets/turn_right_north.png" alt="Cannot load" style="size: 30"/>
+                    <select id="north_right_load">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+            </div>
+            <div id="checkbox">
+                <label>
+                  <input type="checkbox" [(ngModel)]="isChecked">
+                  Start on already generated data
+                </label>
+            </div>
+        </div>
+        <div id="center_streets">
+            <button id="start_normal_button" (click)="start_normal()">Start Simulator Normal Mode</button>
+            <div id="west_div">
+                <div id="west_exit_div">
+                    <img src="assets/front_east.png" alt="Cannot load" style="size: 30"/>
+                </div>
+                <div id="west_left_div">
+                    <img src="assets/turn_left_west.png" alt="Cannot load" style="size: 30"/>
+                    <select id="west_left_load">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div id="west_front_div">
+                    <img src="assets/front_west.png" alt="Cannot load" style="size: 30"/>
+                    <select id="west_front_load">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div id="west_right_div">
+                    <img src="assets/turn_right_west.png" alt="Cannot load" style="size: 30"/>
+                    <select id="west_right_load">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+            </div>
+            <div id="east_div">
+                <div id="east_exit_div">
+                    <img src="assets/front_west.png" alt="Cannot load" style="size: 30"/>
+                </div>
+                <div id="east_left_div">
+                    <img src="assets/turn_left_east.png" alt="Cannot load" style="size: 30"/>
+                    <select id="east_left_load">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div id="east_front_div">
+                    <img src="assets/front_east.png" alt="Cannot load" style="size: 30"/>
+                    <select id="east_front_load">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div id="east_right_div">
+                    <img src="assets/turn_right_east.png" alt="Cannot load" style="size: 30"/>
+                    <select id="east_right_load">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+            </div>
+            <button id="start_optimized_button" (click)="start_optimized()">Start Simulator Optimized Mode</button>
+        </div>
+        <div id="south_div">
+            <div id="south_exit_div">
+                <img src="assets/front_north.png" alt="Cannot load" style="size: 30"/>
+            </div>
+            <div id="south_left_div">
+                <img src="assets/turn_left_south.png" alt="Cannot load" style="size: 30"/>
+                <select id="south_left_load">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <div id="south_front_div">
+                <img src="assets/front_south.png" alt="Cannot load" style="size: 30"/>
+                <select id="south_front_load">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <div id="south_right_div">
+                <img src="assets/turn_right_south.png" alt="Cannot load" style="size: 30"/>
+                <select id="south_right_load">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div id = "starters_div">
+        <button id="edit_load_factor_button" (click)="edit_load_factor()">Edit load factor</button>
+        <div id="legend_div">
+            <p>NSR1:</p>
+            <div id="ns"></div>
+            <div id="r1"></div>
+            <p>WER2:</p>
+            <div id="we"></div>
+            <div id="r2"></div>
+            <p>L1R1:</p>
+            <div id="l1"></div>
+            <div id="r1"></div>
+            <p>L2R2:</p>
+            <div id="l2"></div>
+            <div id="r2"></div>
+        </div>
+    </div>
+</body>
